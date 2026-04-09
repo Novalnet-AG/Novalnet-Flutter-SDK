@@ -53,7 +53,7 @@ class NovalnetPaymentParams {
       "custom": {"lang": bodyParams["lang"] ?? "EN"},
     };
 
-    if (paymentType == "CREDITCARD") {
+if (paymentType == "CREDITCARD") {
       Map<String, dynamic> hostedpage = {
         "display_payments": [paymentType],
         "skip_pages": ['CONFIRMATION_PAGE', 'SUCCESS_PAGE'],
@@ -68,7 +68,7 @@ class NovalnetPaymentParams {
       };
       final cssUrl = bodyParams["css_url"]?.toString();
       if (cssUrl != null && cssUrl.isNotEmpty) {
-        hostedpage["css_url"] = cssUrl;
+        hostedpage["css_url"] = bodyParams["css_url"];
       }
       body["hosted_page"] = hostedpage;
     }
